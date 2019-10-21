@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'unicorn',
     'unicorn.apps.api',
     'unicorn.apps.color',
-    'unicorn.apps.unicorn',
+    'unicorn.apps.unicorn_phat',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'unicorn.urls'

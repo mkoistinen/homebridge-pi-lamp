@@ -5,10 +5,14 @@ try:
     import unicornhat as uh
 except ImportError:
     # This object will be mocked for non-Raspberry Pi testing anyway...
-    from fake_unicorn_hat import unicornhat as uh
+    from .fake_unicorn_hat import fake_unicornhat as uh
+
+from unicorn.apps.color import Color
 
 
 logger = logging.getLogger(__name__)
+
+MEDIUM_CYAN = Color(hex="007F7F")  # Siri color: "Aqua"
 
 
 class Unicorn:
@@ -107,10 +111,8 @@ class Unicorn:
         self._update()
 
 
-
-unicorn = Unicorn(uh, medium_cyan, effect_modes={
-    'FF9429': CandleLight,  # Siri color: "Candle Light"
-    '00A2FF': OceanBoatBlue,  # Siri color: "Ocean Boat Blue"
-    'FF2977': Rainbow,  # Siri color: "Razzmatazz"
+unicorn_phat = Unicorn(uh, MEDIUM_CYAN, effect_modes={
+    # 'FF9429': CandleLight,  # Siri color: "Candle Light"
+    # '00A2FF': OceanBoatBlue,  # Siri color: "Ocean Boat Blue"
+    # 'FF2977': Rainbow,  # Siri color: "Razzmatazz"
 })
-

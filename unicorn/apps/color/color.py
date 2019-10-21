@@ -1,6 +1,9 @@
 import logging
 
-from utils import bracket, hex_to_rgb, hsv_to_rgb, rgb_to_hsv
+from colorsys import hsv_to_rgb, rgb_to_hsv
+
+from unicorn.utils import hex_to_rgb
+from .utils import bracket
 
 logger = logging.getLogger(__name__)
 
