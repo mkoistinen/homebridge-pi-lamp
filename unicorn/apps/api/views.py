@@ -16,7 +16,6 @@ class GetStatusView(BaseApiView):
     Returns the on/off status of the lamp.
     """
     def get(self, request, *args, **kwargs):
-        print('Hello there!')
         return HttpResponse("1" if unicorn_phat.status else "0")
 
 

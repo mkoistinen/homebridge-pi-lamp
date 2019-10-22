@@ -2,7 +2,7 @@
 
 import pytest
 
-from unicorn.color import Color
+from unicorn.apps.color import Color
 
 
 def test_create(color, unicorn):

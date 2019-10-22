@@ -16,7 +16,7 @@ class HexColorConverter:
         return str(value)
 
     def to_url(self, value):
-        return value.tolower()
+        return value.lower()
 
 
 class OnOffConverter:
@@ -26,7 +26,7 @@ class OnOffConverter:
         return str(value)
 
     def to_url(self, value):
-        return value.tolower()
+        return value.lower()
 
 
 register_converter(HexColorConverter, 'hexcolor')

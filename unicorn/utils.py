@@ -3,18 +3,10 @@
 from colorsys import rgb_to_hsv, hsv_to_rgb
 import logging
 
-from unicorn.apps.color.utils import bracket, hex_to_rgb
+from unicorn.apps.color.utils import hex_to_rgb
 
 
 logger = logging.getLogger('unicorn.utils')
-
-
-def transition(r, g, b, old_r, old_g, old_b, step, steps):
-    """Utility method for interpolating."""
-    vr = r + (old_r - r) / float(steps) * float(step)
-    vg = g + (old_g - g) / float(steps) * float(step)
-    vb = b + (old_b - b) / float(steps) * float(step)
-    return bracket(vr), bracket(vg), bracket(vb)
 
 
 def get_rgb_brightness(color):

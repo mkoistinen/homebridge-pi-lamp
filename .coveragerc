@@ -1,0 +1,2 @@
+[run]
+omit = unicorn/tests/*

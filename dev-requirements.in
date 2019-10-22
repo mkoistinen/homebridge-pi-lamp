@@ -1,8 +1,6 @@
 -c requirements.txt
 
-coverage==4.5.4
-mock==3.0.5
-pip-tools==4.0.0
+pip-tools>=4.2.0,<5.0
 pytest
 pytest-cov==2.7.1
-pytest-mock==1.10.4
+pytest-django

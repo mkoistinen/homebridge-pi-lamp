@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'unicorn',
     'unicorn.apps.api',
     'unicorn.apps.color',

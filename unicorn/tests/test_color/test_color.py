@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-
 import pytest
 
-from ..color import Color
+from unicorn.apps.color import Color
 
 
 @pytest.mark.parametrize("hex_code,rgb_tuple", [
