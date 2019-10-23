@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-pi-lamp",
+  "version": "0.0.1",
+  "description": "An integration of the Raspberry Pi, the Unicorn pHAT and Homebridge.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkoistinen/homebridge-pi-lamp.git"
+  },
+  "author": "Martin Koistinen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkoistinen/homebridge-pi-lamp/issues"
+  },
+  "homepage": "https://github.com/mkoistinen/homebridge-pi-lamp#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1"
+  }
+}

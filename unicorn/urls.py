@@ -18,5 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('config/', include('unicorn.apps.config.urls')),
     path('unicorn/api/', include('unicorn.apps.api.urls'))
 ]

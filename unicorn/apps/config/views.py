@@ -12,7 +12,7 @@ class WifiConfigView(FormView):
     http_method_names = ['get', 'post', ]
     form_class = WifiConfigForm
     template_name = 'config/wifi_config.html'
-    success_url = reverse_lazy('wifi_config_accepted')
+    success_url = reverse_lazy('updating-wifi')
 
 
 class WifiConfigUpdatingView(TemplateView):
@@ -20,4 +20,4 @@ class WifiConfigUpdatingView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         # TODO: Set the parameters
-        return super().form_valid(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)

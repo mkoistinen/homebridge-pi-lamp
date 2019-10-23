@@ -1,24 +1,35 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}
-Configuration: Wifi
-{% endblock %}
+{% block page_title %}Configuration: Wifi{% endblock %}
+{% block title %}Configuration: Wifi{% endblock %}
 
 {% block content %}
     {{ super }}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-12">
                 <h2>Wi-Fi Configuration</h2>
                 <p class="text-muted">Connect your lamp to your local wifi network</p>
                 <form method="post">
-                    {{ form.csrf_token }}
-                    {{ wtf.form_field(form.ssid) }}
-                    {{ wtf.form_field(form.password) }}
-                    {{ wtf.form_field(form.security_mode) }}
-                    <div class="col xs-col-12">
-                        <input class="btn btn-primary" id="submit" type="submit" value="Submit">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_ssid">{% trans "Station ID:" %}</label>
+                        <input type="text" class="form-control" name="ssid" required="required" id="id_ssid" autocomplete="off">
                     </div>
+                    <div class="form-group">
+                        <label for="id_password">{% trans "Wifi Password:" %}</label>
+                        <input type="password" class="form-control" name="password" required="required" id="id_password" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_security_mode">{% trans "Security Mode:" %}</label>
+                        <select class="form-control" name="security_mode" id="id_security_mode">
+                            <option value="WEP">WEP</option>
+                            <option value="WPA_WPA2P">WPA/WPA2 Personal</option>
+                            <option value="WPA2P">WPA2 Personal</option>
+                        </select>
+                    </div>
+                    <input class="btn btn-primary" id="submit" type="submit" value="Submit">
                 </form>
             </div>
         </div>
