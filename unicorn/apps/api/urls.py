@@ -32,6 +32,7 @@ class OnOffConverter:
 register_converter(HexColorConverter, 'hexcolor')
 register_converter(OnOffConverter, 'onoff')
 
+app_name = 'api'
 
 urlpatterns = [
     path('v1.0/', include([
