@@ -5,7 +5,7 @@ OK = b'OK'
 
 
 def test_get_status_view(client):
-    response = client.get(reverse('get-status'))
+    response = client.get(reverse('api:get-status'))
     assert response.content == b'1'
 
 
@@ -18,7 +18,7 @@ def test_get_status_view(client):
 ])
 def test_set_status_view(client, status, expected):
     try:
-        url = reverse('set-status', kwargs={'status': status})
+        url = reverse('api:set-status', kwargs={'status': status})
         response = client.get(url)
         assert response.content == OK
         assert expected is True
@@ -27,19 +27,19 @@ def test_set_status_view(client, status, expected):
 
 
 def test_set_status_on_view(client):
-    url = reverse('set-status-on')
+    url = reverse('api:set-status-on')
     response = client.get(url)
     assert response.content == OK
 
 
 def test_set_status_off_view(client):
-    url = reverse('set-status-off')
+    url = reverse('api:set-status-off')
     response = client.get(url)
     assert response.content == OK
 
 
 def test_get_color_view(client):
-    url = reverse('get-color')
+    url = reverse('api:get-color')
     response = client.get(url)
     assert response.content == b'007F7F'
 
@@ -52,7 +52,7 @@ def test_get_color_view(client):
 ])
 def test_set_color_view(client, color, expected):
     try:
-        url = reverse('set-color', kwargs={'color': color})
+        url = reverse('api:set-color', kwargs={'color': color})
         response = client.get(url)
         assert response.content == OK
         assert expected is True
@@ -61,6 +61,6 @@ def test_set_color_view(client, color, expected):
 
 
 def test_get_brightness_view(client):
-    url = reverse('get-brightness')
+    url = reverse('api:get-brightness')
     response = client.get(url)
     assert response.content == b'93'
