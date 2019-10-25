@@ -15,19 +15,19 @@
             "service": "Light",
 
             "switch": {
-                "status": "http://127.0.0.1:5000/unicorn/api/v1.0/status",
-                "powerOn": "http://127.0.0.1:5000/unicorn/api/v1.0/on",
-                "powerOff": "http://127.0.0.1:5000/unicorn/api/v1.0/off"
+                "status": "http://127.0.0.1/unicorn/api/v1.0/status",
+                "powerOn": "http://127.0.0.1/unicorn/api/v1.0/on",
+                "powerOff": "http://127.0.0.1/unicorn/api/v1.0/off"
             },
 
             "brightness": {
-                "status": "http://127.0.0.1:5000/unicorn/api/v1.0/brightness",
-                "url": "http://127.0.0.1:5000/unicorn/api/v1.0/brightness/%s"
+                "status": "http://127.0.0.1/unicorn/api/v1.0/brightness",
+                "url": "http://127.0.0.1/unicorn/api/v1.0/brightness/%s"
             },
 
             "color": {
-                "status": "http://127.0.0.1:5000/unicorn/api/v1.0/set",
-                "url": "http://127.0.0.1:5000/unicorn/api/v1.0/set/%s",
+                "status": "http://127.0.0.1/unicorn/api/v1.0/set",
+                "url": "http://127.0.0.1/unicorn/api/v1.0/set/%s",
                 "brightness": true
             }
         }

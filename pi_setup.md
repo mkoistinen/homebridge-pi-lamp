@@ -54,15 +54,20 @@ Via another terminal check that you can now log in via SSH:
 
 The above will take like 20 minutes!
 
-Now install fail2ban! (and htop, you'll love it)
+Now install fail2ban
 
     sudo apt-get update
-    sudo apt-get install htop fail2ban
+    sudo apt-get install -y fail2ban
     sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
     sudo reboot
 
 Make sure you can log in via SSH and zero_pub key!
+
+## Install webserver and connector
+
+    sudo apt-get install -y build-essential python3-dev nginx
+    sudo pip install uwsgi
 
 ## Localize System Configuration
 
@@ -70,11 +75,13 @@ Configure system using:
 
     sudo raspi-config
 
-1. Locale: "en-US" (use your own, of course)
-2. Time Zones:
-3. Keyboard:
-4. Expand filesystem (reboot again)
+1. Locale: Use your own, of course
+2. Time Zones: Use your own, of course
+3. Keyboard: Use your own, of course
+4. Expand filesystem
 
+
+    sudo reboot
 
 ## Install Node
 Check to see which version is latest first!
@@ -85,20 +92,23 @@ Check to see which version is latest first!
 
 ## Setup System Users
 
+#### homebridge
     sudo useradd --system homebridge
-    sudo useradd --system unicorn
-    sudo usermod -aG sudo unicorn
     sudo mkdir /var/homebridge
-    sudo mkdir /var/unicorn
     sudo chown homebridge:homebridge /var/homebridge
-    sudo chown unicorn:unicorn /var/unicorn
-    sudo usermod -d /var/unicorn unicorn
     sudo usermod -d /var/homebridge homebridge
 
-## Install unicorn-homebridge-integration
+#### unicorn
+    sudo useradd --system unicorn
+    sudo mkdir /var/unicorn
+    sudo chown unicorn:unicorn /var/unicorn
+    sudo usermod -d /var/unicorn unicorn
+    sudo usermod -aG sudo unicorn
+
+## Install homebridge-pi-lamp
 
     cd /var/unicorn
-    sudo su unicorn -c "git clone https://github.com/mkoistinen/unicorn-homebridge-integration.git unicorn"
+    sudo su unicorn -c "git clone https://github.com/mkoistinen/homebridge-pi-lamp.git unicorn"
 
 ### Copy init scripts to system locations
 Copy the daemons to the right place:
