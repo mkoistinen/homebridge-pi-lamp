@@ -10,7 +10,7 @@
     <body class="pt-4 mt-5">
         {% block navbar %}
             <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
-              <a class="navbar-brand" href="#">{% trans "Homebridge Pi Lamp" %}</a>
+              <a class="navbar-brand" href="{% url 'config:configure-home' %}">{% trans "Homebridge Pi Lamp" %}</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
